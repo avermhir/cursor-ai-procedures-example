@@ -18,7 +18,7 @@ This procedure defines how to wrap up a work session to enable rapid continuatio
 - Identify blockers and next steps
 
 ### Output
-- Updated `wrapup.md` document in project root
+- Updated `wrapup.md` document in `.ai_working/` folder
 - Reviewed and updated todo list
 - Clear handoff notes for next session
 
@@ -211,7 +211,7 @@ Identify and document near-term tasks:
 
 ### 3.1 Update wrapup.md
 
-Update the `wrapup.md` file in the project root with:
+Update the `wrapup.md` file in the `.ai_working/` folder with:
 
 **Required Sections:**
 
