@@ -165,14 +165,16 @@ API design, implementation, and evolution.
 **Location:** [`api-lifecycle/`](./api-lifecycle/)
 
 **Procedures:**
-- API Discovery Procedure
-- API Design Procedure (OpenAPI/Types)
-- Backwards Compatibility Procedure
+- **[API Discovery Procedure](./api-lifecycle/api-discovery-procedure.md)** - Discovering existing APIs
+- **[API Design Procedure](./api-lifecycle/api-design-procedure.md)** - Designing APIs with OpenAPI/Types
+- **[Backwards Compatibility Procedure](./api-lifecycle/backwards-compatibility-procedure.md)** - Assessing backwards compatibility requirements
 - API Implementation Procedure
-- API Security Procedure
 - API Testing Procedure
 - API Documentation Procedure
 - API Deprecation Procedure
+
+**Standards:**
+- **[API Security Standards](../.ai_standards/security-standards/api-security-standards.md)** - Security requirements for APIs
 
 ## 9. AuthN/AuthZ Lifecycle
 

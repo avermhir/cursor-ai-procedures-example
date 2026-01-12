@@ -15,7 +15,7 @@ This procedure conducts security code review and security testing beyond the thr
 
 ## Integration Points
 
-- **Reviews:** Frontend code, Backend code, Middleware code, API security, Data security
+- **Reviews:** Frontend code, Backend code, Middleware code, API security (against [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md)), Data security
 - **Outputs to:** Acceptance & Signoff Procedure
 
 ---

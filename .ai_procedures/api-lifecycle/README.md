@@ -10,10 +10,13 @@ This folder contains procedures for API design, implementation, testing, documen
 - **API Design Procedure** - Designing APIs with OpenAPI/Types
 - **Backwards Compatibility Procedure** - Ensuring API compatibility
 - **API Implementation Procedure** - Implementing APIs
-- **API Security Procedure** - Securing APIs
 - **API Testing Procedure** - Testing APIs
 - **API Documentation Procedure** - Documenting APIs
 - **API Deprecation Procedure** - Deprecating APIs
+
+## Standards
+
+- **API Security Standards** - Security requirements for APIs (see [`.ai_standards/security-standards/api-security-standards.md`](../../.ai_standards/security-standards/api-security-standards.md))
 
 ## Usage
 
@@ -31,4 +34,8 @@ Follow these procedures when:
 
 ---
 
-**Status:** Procedures pending definition
+**Status:** 
+- ✅ API Discovery Procedure - Defined
+- ✅ API Design Procedure - Defined
+- ✅ Backwards Compatibility Procedure - Defined
+- 📝 All other procedures - Placeholders created, pending definition

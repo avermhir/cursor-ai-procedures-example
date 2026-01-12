@@ -135,8 +135,10 @@ A fully implemented, tested, verified, and ready-to-deploy feature that:
 - Requirements
 
 **Actions**
+- Invoke [API Discovery Procedure](../api-lifecycle/api-discovery-procedure.md) (CRITICAL - discover existing APIs before designing new ones)
 - Invoke [Data Design Procedure](./data-design-procedure.md) (for backend features)
-- Invoke [API Contract Procedure](./api-contract-procedure.md) (CRITICAL - all layers depend on this)
+- Invoke [Backwards Compatibility Procedure](../api-lifecycle/backwards-compatibility-procedure.md) (if API changes may affect existing consumers - determines if backwards compatibility is required)
+- Invoke [API Contract Procedure](./api-contract-procedure.md) (CRITICAL - all layers depend on this, uses API Discovery results and backwards compatibility decision)
 - Invoke [Third-Party Integration Procedure](./third-party-integration-procedure.md) (if third-party services needed)
 - Invoke [AuthN/AuthZ Procedure](./authn-authz-procedure.md) (if authentication/authorization needed)
 - Verify API contracts are stable and complete
@@ -151,8 +153,10 @@ A fully implemented, tested, verified, and ready-to-deploy feature that:
   - **No-Go:** If no, stabilize API contracts before proceeding
 
 **Outputs**
+- Existing APIs discovered and documented
 - Data design complete (if applicable)
-- API contracts defined and stable
+- Backwards compatibility requirement determined (if API changes involved)
+- API contracts defined and stable (informed by API Discovery and backwards compatibility decision)
 - Third-party integration specs (if applicable)
 - AuthN/AuthZ requirements (if applicable)
 - Ready for implementation
