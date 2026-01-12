@@ -1,0 +1,82 @@
+---
+description: Jira integration for issue tracking. All issues should be created in Jira, not GitHub Issues.
+alwaysApply: true
+---
+
+# Jira Integration
+
+## Project Information
+- **Project Key:** DT (Development Team)
+- **URL:** https://conversationdynamics.atlassian.net/browse/DT
+- **Lead:** Dave Kester
+
+## Issue Types
+| Type | Use For |
+|------|---------|
+| Bug | Defects, errors, unexpected behavior |
+| Task | General work items, chores, maintenance |
+| Story | User-facing features, enhancements |
+| Epic | Large features spanning multiple stories |
+| Sub-task | Breakdown of larger issues |
+
+## Creating Issues
+
+Use Jira MCP tools to create issues:
+- `jira_create_issue` - Create new issues
+- `jira_search_issues` - Search with JQL
+- `jira_get_issue` - Get issue details
+- `jira_update_issue` - Update existing issues
+- `jira_add_comment` - Add comments
+- `jira_transition_issue` - Change status
+
+### Example: Create a Bug
+```
+Create a Jira bug in DT project:
+- Title: "Login fails with special characters in password"
+- Description: "Users cannot log in when password contains & or < characters"
+- Priority: High
+```
+
+### Example: Search Issues
+```
+Search for open bugs: project = DT AND type = Bug AND status != Done
+Search my tasks: project = DT AND assignee = currentUser()
+```
+
+## Workflow States
+- To Do → In Progress → Code Review → Done
+
+## Linking to Code
+
+### Commit Messages
+Format: `DT-XXX: Brief description`
+```
+git commit -m "DT-42: Fix password validation for special characters"
+```
+
+### PR Titles
+Format: `DT-XXX: PR title`
+```
+gh pr create --title "DT-42: Fix login validation" --body "Fixes DT-42"
+```
+
+### PR Body Template
+```markdown
+## Summary
+Fixes DT-XXX
+
+## Changes
+- Change 1
+- Change 2
+
+## Test Plan
+- [ ] Test case 1
+- [ ] Test case 2
+```
+
+## DO NOT Use GitHub Issues
+
+❌ Do not create issues in GitHub Issues
+❌ Do not reference GitHub issue numbers (#XXX)
+✅ Always use Jira for issue tracking
+✅ Always reference Jira tickets (DT-XXX)

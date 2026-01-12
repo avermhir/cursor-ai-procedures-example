@@ -1,0 +1,4 @@
+---
+description: When asked about a GitHub task, offer to use the GH CLI to execute commands. When asked to perform GitHub actions, use the GH CLI to take that action.
+alwaysApply: true
+---

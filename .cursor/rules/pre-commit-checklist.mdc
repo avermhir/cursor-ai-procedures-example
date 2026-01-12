@@ -1,0 +1,138 @@
+---
+description: Comprehensive pre-commit checklist for NestJS/Prisma/Auth0 projects to ensure code quality before commits
+alwaysApply: true
+---
+
+## **🔍 Pre-Commit Checklist for CDP-216**
+
+### **�� Code Quality & Standards**
+
+#### **TypeScript & NestJS**
+- [ ] **No TypeScript errors** - `npm run build` passes without errors
+- [ ] **ESLint passes** - `npm run lint` shows no warnings/errors
+- [ ] **NestJS best practices** - Controllers, services, modules properly structured
+- [ ] **Proper imports** - All imports are used and correctly ordered
+- [ ] **Type safety** - No `any` types, proper interfaces defined
+
+#### **Database & Prisma**
+- [ ] **Prisma schema valid** - `npx prisma validate` passes
+- [ ] **Migrations up to date** - `npx prisma migrate status` shows clean
+- [ ] **No raw SQL** - Use Prisma ORM methods instead of raw queries
+- [ ] **Proper error handling** - Database operations wrapped in try/catch
+- [ ] **Transaction safety** - Multi-step operations use Prisma transactions
+
+### **🔐 Security & Authentication**
+
+#### **Auth0 Integration**
+- [ ] **JWT validation** - All protected endpoints use `@UseGuards(AuthGuard('jwt'))`
+- [ ] **No hardcoded secrets** - All sensitive data in environment variables
+- [ ] **Input validation** - DTOs have proper validation decorators
+- [ ] **SQL injection prevention** - Using Prisma parameterized queries
+- [ ] **CORS configured** - Proper CORS settings for production
+
+#### **API Security**
+- [ ] **Rate limiting** - Consider adding rate limiting for seeding endpoints
+- [ ] **Input sanitization** - All user inputs properly validated
+- [ ] **Error messages** - No sensitive information in error responses
+
+### **�� Testing & Validation**
+
+#### **Functionality Testing**
+- [ ] **Seed endpoints work** - Test all 5 seeding endpoints locally
+- [ ] **Auth0 integration** - Test user creation and sync functionality
+- [ ] **Database operations** - Verify all CRUD operations work correctly
+- [ ] **Error scenarios** - Test error handling for invalid inputs
+- [ ] **Edge cases** - Test with empty arrays, invalid emails, etc.
+
+#### **Data Integrity**
+- [ ] **Foreign key constraints** - All relationships properly maintained
+- [ ] **Unique constraints** - No duplicate data creation
+- [ ] **Data validation** - All required fields populated correctly
+- [ ] **Upsert logic** - Seeding can be run multiple times safely
+
+### **📚 Documentation & Comments**
+
+#### **Code Documentation**
+- [ ] **API documentation** - Swagger decorators on all endpoints
+- [ ] **Method comments** - Complex logic has explanatory comments
+- [ ] **README updates** - Any new setup steps documented
+- [ ] **Environment variables** - All new env vars documented in `.env_sample`
+
+#### **Commit Quality**
+- [ ] **Clear commit message** - Follows conventional commit format
+- [ ] **Atomic commits** - Each commit represents one logical change
+- [ ] **No debug code** - Remove console.logs, debug statements
+- [ ] **Clean git history** - No merge conflicts or unnecessary commits
+
+### **�� Deployment Readiness**
+
+#### **Environment Configuration**
+- [ ] **Environment variables** - All required vars documented and set
+- [ ] **Database connection** - Works with both local and production DBs
+- [ ] **Auth0 configuration** - Proper domain, client ID, secrets configured
+- [ ] **CORS settings** - Appropriate for target environment
+
+#### **Performance & Scalability**
+- [ ] **Database queries** - No N+1 queries, proper indexing
+- [ ] **Memory usage** - No memory leaks in long-running operations
+- [ ] **Batch operations** - Large data operations use batching
+- [ ] **Connection pooling** - Database connections properly managed
+
+### **�� Specific to This Seeding Feature**
+
+#### **Seeding Logic**
+- [ ] **Idempotent operations** - Can run multiple times safely
+- [ ] **Data relationships** - All foreign keys properly linked
+- [ ] **User creation** - Auth0 users created with proper attributes
+- [ ] **Group management** - Groups and memberships created correctly
+- [ ] **Sharing logic** - Practice sharing works as expected
+
+#### **Error Handling**
+- [ ] **Auth0 failures** - Graceful handling of Auth0 API errors
+- [ ] **Database errors** - Proper rollback on transaction failures
+- [ ] **Validation errors** - Clear error messages for invalid inputs
+- [ ] **Partial failures** - System continues working if some operations fail
+
+### **📝 Quick Commands to Run**
+
+```bash
+# 1. TypeScript & Linting
+npm run build
+npm run lint
+
+# 2. Database validation
+npx prisma validate
+npx prisma migrate status
+
+# 3. Test seeding endpoints
+curl -X POST http://localhost:4000/database/seed-scenarios-only \
+  -H "Authorization: Bearer YOUR_JWT_TOKEN"
+
+# 4. Check for debug code
+grep -r "console.log\|debugger\|TODO\|FIXME" src/ --exclude-dir=node_modules
+
+# 5. Verify environment variables
+grep -r "process.env" src/ | grep -v "\.env"
+```
+
+### **🎯 Pre-Commit Checklist Summary**
+
+**Before every commit, run:**
+1. ✅ `npm run build` (no errors)
+2. ✅ `npm run lint` (no warnings)
+3. ✅ `npx prisma validate` (schema valid)
+4. ✅ Test at least one seeding endpoint
+5. ✅ Check for hardcoded values
+6. ✅ Verify all imports are used
+7. ✅ Review commit message quality
+
+**For this specific feature:**
+- ✅ All 5 seeding endpoints tested
+- ✅ Auth0 user creation works
+- ✅ Database relationships intact
+- ✅ Error handling comprehensive
+- ✅ Documentation complete
+
+Would you like me to create a script that automates some of these checks, or would you prefer to go through this checklist manually before committing?
+
+**Note:** Also run the static-analysis-checklist rule.

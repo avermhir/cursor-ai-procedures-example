@@ -1,0 +1,26 @@
+---
+description: Always prefer existing open-source libraries over writing custom implementations. Search for established solutions, compare options, and only write custom code if no suitable library exists or integration cost outweighs benefits.
+alwaysApply: true
+---
+
+# Always Prefer Existing Libraries
+
+When generating or modifying code:
+
+- Always search for established open-source libraries that solve the problem.
+
+- Prefer solutions from reputable repos over writing custom implementations.
+
+- If a suitable library exists, describe its usage and integrate it instead of reinventing functionality.
+
+- If multiple libraries exist, briefly compare them and pick the best fit.
+
+- Only write fresh code if:
+
+ 1. No reputable library exists,
+
+ 2. Using one would introduce unnecessary complexity, OR
+
+ 3. Integration cost outweighs the benefit.
+
+- Before coding, list the libraries you considered and why you chose (or didn't choose) one.

@@ -1,0 +1,4 @@
+---
+description: When committing to GitHub, always sync with remote. Never leave local-only branches or commits.
+alwaysApply: true
+---

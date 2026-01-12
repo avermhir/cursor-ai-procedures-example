@@ -1,0 +1,35 @@
+---
+description: Naming convention for files in .ai_working directory to distinguish temporary vs permanent files
+alwaysApply: true
+---
+
+# .ai_working File Naming Convention
+
+## Purpose
+Files in the `.ai_working` directory should follow a naming convention to distinguish between temporary and permanent files.
+
+## Naming Convention
+
+### Permanent Files
+- **No prefix**: Files without a prefix are considered permanent and should NOT be deleted during cleanup
+- Examples: `ai-mistake-log.md`, `PR147_STATIC_ANALYSIS_REVIEW.md`
+
+### Temporary Files
+- **`temp_` prefix**: Files with `temp_` prefix are temporary working files that can be safely deleted
+- Examples: `temp_analysis.md`, `temp_notes.txt`, `temp_pr_review.md`
+
+## Rules
+
+1. **Before deleting files in `.ai_working`**:
+   - Check the file name - if it has no prefix, ask the user before deleting
+   - Only delete files with `temp_` prefix during cleanup
+   - Always confirm with user before bulk deletion
+
+2. **When creating new files in `.ai_working`**:
+   - Use `temp_` prefix if the file is temporary (e.g., `temp_plan.md`)
+   - Use no prefix if the file should be kept long-term (e.g., `ai-mistake-log.md`)
+
+3. **Git tracking**:
+   - Files in `.ai_working` are typically gitignored
+   - Permanent files should be considered important even if not tracked
+   - Never assume a file is safe to delete just because it's not in git

@@ -1,0 +1,29 @@
+---
+description: |
+  CRITICAL: When creating temporary working files during AI sessions (analysis documents, investigation reports, review drafts, implementation plans, etc.), you MUST save them ONLY to the `.ai_working/` directory. Do NOT create temporary working files in the project root or other directories.
+alwaysApply: true
+---
+
+**Examples of files that belong in `.ai_working/`:**
+- PR reviews and comments (e.g., `PR_41_REVIEW.md`)
+- Implementation plans for specific features
+- Investigation/analysis documents (e.g., schema mismatches, error analysis)
+- Audit reports and findings
+- Infrastructure fix documentation
+- Session-specific requirements documents
+- Any markdown files created for temporary reference or drafting
+
+**Files that should stay in their proper locations:**
+- Permanent API documentation (`docs/API_DOCUMENTATION.md`)
+- Project standards (`docs/PROJECT_STANDARDS.md`)
+- Ongoing TODO/planning documents that are part of the project
+- README files
+- Configuration files
+
+**Rationale:** The `.ai_working/` folder is gitignored to keep temporary AI session artifacts out of version control while maintaining a clean project structure.
+
+**Enforcement:** All temporary working files created during AI sessions must be placed in `.ai_working/`. Files created elsewhere (root directory, `docs/`, etc.) should be moved to `.ai_working/` immediately.
+
+
+alwaysApply: true
+---

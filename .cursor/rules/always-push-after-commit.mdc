@@ -1,0 +1,29 @@
+---
+description: Always push local commits to remote immediately after committing. Never leave commits only on local branches.
+alwaysApply: true
+---
+
+# Always Push After Commit
+
+When making a local commit, **always push to remote immediately** after the commit succeeds.
+
+## Rule
+
+1. **After every `git commit`**: Immediately follow with `git push` to push the commit to the remote branch.
+
+2. **If push fails**: Address any build/lint errors from the pre-push hook, then retry the push.
+
+3. **Never leave local-only commits**: All commits should be pushed to remote unless there's an explicit reason to delay (and document why).
+
+## Rationale
+
+- Prevents loss of work if local machine has issues
+- Ensures other team members can see progress
+- Maintains consistency with remote repository
+- Prevents accumulation of unpushed commits
+
+## Exception
+
+Only skip pushing if:
+- Explicitly requested by the user to delay
+- There's a known issue that needs to be resolved first (document it)

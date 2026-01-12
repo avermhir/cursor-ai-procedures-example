@@ -1,0 +1,9 @@
+---
+description: |
+  You have access to GitHub CLI. When asked to perform a task related to PRs, Commits, Branching etc., use this process:
+  1. Create a plan.
+  2. Create content in md files in .ai_working folder you need to execute the plan.
+  3. Execute the plan.
+  When executing a git related task, prepend your messages with clipboard emoji.
+alwaysApply: true
+---

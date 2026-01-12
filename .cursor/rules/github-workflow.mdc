@@ -1,0 +1,192 @@
+---
+description: GitHub CLI and git workflow guidance. Use GH CLI for PRs/branches/commits, Jira for issue tracking.
+alwaysApply: true
+---
+
+# GitHub & Git Workflow
+
+## Purpose
+
+This rule defines how to use GitHub CLI and git for repository operations, while using Jira for issue tracking.
+
+## GitHub CLI Usage
+
+When asked about a GitHub task, use the GH CLI to execute commands.
+
+### Use GitHub CLI For:
+- **Pull Requests:** create, review, merge, list, comment
+- **Branches:** create, delete, checkout, list
+- **Commits:** view history, show commits
+- **Repository operations:** clone, fork, status
+- **GitHub Actions:** view runs, trigger workflows
+
+### NOT for Issue Tracking
+
+**Do NOT use GitHub Issues for tracking work.** Use Jira instead:
+- **Project:** DT (Development Team)
+- **URL:** https://conversationdynamics.atlassian.net/browse/DT
+- **Use:** Jira MCP tools for all issue operations
+
+## Workflow Process
+
+When executing git/GitHub tasks:
+
+1. **Create a plan** - Break down the task into steps
+2. **Create content** - Draft any necessary content in `.ai_working/` folder
+3. **Execute the plan** - Run commands and make changes
+4. **Reference Jira tickets** - Always include DT-XXX in commits and PRs
+
+## PR Workflow with Jira
+
+### Creating PRs
+
+Always reference Jira tickets when creating PRs:
+
+```bash
+gh pr create --title "DT-123: Fix login bug" --body "## Summary
+Fixes DT-123
+
+## Changes
+- Fixed authentication flow
+- Updated error handling
+
+## Test Plan
+- [ ] Tested with valid credentials
+- [ ] Tested with invalid credentials
+"
+```
+
+### PR Title Format
+```
+DT-XXX: Brief description of changes
+```
+
+### PR Body Requirements
+- **Summary:** Brief overview
+- **Jira Reference:** "Fixes DT-XXX" or "Related to DT-XXX"
+- **Changes:** Bullet list of changes
+- **Test Plan:** How to verify the changes
+
+## Commit Message Format
+
+### Required Format
+All commits **must** reference a Jira ticket:
+
+```bash
+git commit -m "DT-123: Fix password validation bug"
+```
+
+### Format Rules
+- Prefix with Jira ticket: `DT-XXX: `
+- Use present tense: "Fix bug" not "Fixed bug"
+- Keep under 72 characters for first line
+- Add details in commit body if needed
+
+### Examples
+
+✅ **Good:**
+```
+DT-42: Fix password validation for special characters
+DT-89: Add user profile image upload endpoint
+DT-156: Refactor Auth0 user sync logic
+```
+
+❌ **Bad:**
+```
+fix bug              (no Jira ticket)
+Fixed the login      (past tense, no ticket)
+updates              (vague, no ticket)
+```
+
+## Communication Style
+
+When executing a git-related task, prepend messages with 📋 emoji.
+
+**Example:**
+```
+📋 Creating PR for DT-123...
+```
+
+## Jira Integration
+
+### Project Information
+- **Project Key:** DT
+- **Commit format:** `DT-XXX: description`
+- **PR title format:** `DT-XXX: PR title`
+- **PR body:** Must include `Fixes DT-XXX` or `Related to DT-XXX`
+
+### Linking Commits to Jira
+Jira automatically links commits that include ticket numbers in the format `DT-XXX`.
+
+### Updating Jira from PR
+When PR is merged:
+- Jira ticket can transition automatically (if configured)
+- Add comment to Jira with PR link
+- Update ticket status to reflect merge
+
+## Common Commands
+
+### Pull Requests
+```bash
+# Create PR
+gh pr create --title "DT-123: Title" --body "Fixes DT-123"
+
+# List PRs
+gh pr list
+
+# View PR
+gh pr view 123
+
+# Merge PR
+gh pr merge 123 --squash --delete-branch
+
+# Add comment
+gh pr comment 123 --body "Updated per review feedback"
+```
+
+### Branches
+```bash
+# Create branch
+git checkout -b feature/DT-123-add-feature
+
+# List branches  
+git branch -a
+
+# Delete branch
+git branch -d feature/DT-123-add-feature
+```
+
+### Commits
+```bash
+# View commit history
+git log --oneline -n 20
+
+# Show commit details
+git show <commit-hash>
+
+# Amend last commit
+git commit --amend -m "DT-123: Updated commit message"
+```
+
+## Exception: No Jira Ticket Required
+
+Only for:
+- Documentation fixes
+- README updates  
+- Configuration changes
+- Build/CI updates
+
+Use conventional commit prefix instead:
+```
+docs: Update API documentation for user endpoints
+chore: Update npm dependencies
+ci: Fix GitHub Actions workflow
+```
+
+## Integration with Other Rules
+
+This rule works with:
+- **commit-to-github.mdc** - Commit message format and push requirements
+- **pr-merge-workflow.mdc** - PR merge safety checks
+- **jira-integration.mdc** - Full Jira workflow details
+- **pre-commit-checklist.mdc** - Pre-commit validation steps

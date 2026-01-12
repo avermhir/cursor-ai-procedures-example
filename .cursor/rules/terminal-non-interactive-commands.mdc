@@ -1,0 +1,114 @@
+---
+description: |
+  Terminal commands must use non-interactive flags to prevent paging/prompting.
+  
+  Since the AI cannot press keys interactively, all terminal commands that might
+  produce large output or require user interaction must use flags that bypass
+  interactive prompts.
+
+alwaysApply: true
+---
+
+# Terminal Non-Interactive Command Rule
+
+## Problem
+Commands that produce large output may trigger pagers (like `less` or `more`) that wait for user input (spacebar, Enter, q, etc.). Since the AI cannot press keys interactively, these commands will hang or produce incomplete output.
+
+## Solution
+Always use non-interactive flags and options when running terminal commands.
+
+## Common Command Patterns
+
+### Git Commands
+- ❌ `git branch` - May trigger pager for long branch lists
+- ✅ `git --no-pager branch` - Shows all branches without paging
+- ✅ `git branch --list` - Alternative for listing
+- ✅ `git log --oneline -n 20` - Limit output instead of paging
+- ✅ `git diff --no-pager` - Show diffs without paging
+- ✅ `git config --global pager.branch false` - Disable pager for branch (if needed)
+
+### Less/More Commands
+- ❌ `less file.txt` - Requires interactive navigation
+- ✅ `cat file.txt` - Shows entire file (use read_file tool instead)
+- ✅ `head -n 100 file.txt` - Show first N lines
+- ✅ `tail -n 100 file.txt` - Show last N lines
+
+### Package Manager Commands
+- ❌ `npm install` - May prompt for user input
+- ✅ `npm install --yes` - Skip prompts
+- ✅ `yarn install --non-interactive` - Skip prompts
+- ❌ `npx create-next-app` - Prompts for configuration
+- ✅ `npx create-next-app --yes` - Use defaults, no prompts
+
+### System Commands
+- ❌ `rm -i file.txt` - Prompts for confirmation
+- ✅ `rm -f file.txt` - Force delete without confirmation
+- ❌ `apt-get install package` - May prompt for confirmation
+- ✅ `apt-get install -y package` - Auto-confirm
+- ✅ `sudo apt-get install -y package` - Auto-confirm with sudo
+
+### Docker Commands
+- ❌ `docker logs container` - May page long logs
+- ✅ `docker logs --tail 100 container` - Limit output
+- ✅ `docker logs --since 1h container` - Time-based limit
+
+### Database Commands
+- ❌ `psql -c "SELECT * FROM large_table"` - May page results
+- ✅ `psql -c "SELECT * FROM large_table LIMIT 100"` - Limit results
+- ✅ `mysql --batch` - Non-interactive mode
+
+## General Strategies
+
+1. **Use --no-pager flags** when available (git, systemctl, etc.)
+2. **Limit output** with `-n`, `--tail`, `LIMIT`, `--max-count`, etc.
+3. **Use --yes or -y flags** to auto-confirm prompts
+4. **Use --non-interactive flags** when available
+5. **Use --batch or --quiet modes** when available
+6. **Avoid interactive editors** - use file manipulation tools instead
+
+## Git-Specific Best Practices
+
+Since git is heavily used, here are specific patterns:
+
+```bash
+# Branch operations
+git --no-pager branch
+git --no-pager branch -a
+git --no-pager branch -r
+
+# Log operations  
+git --no-pager log --oneline -n 50
+git log --oneline --no-pager -n 50
+
+# Diff operations
+git --no-pager diff
+git --no-pager diff --staged
+
+# Show operations
+git --no-pager show HEAD
+
+# Status (usually fine, but for consistency)
+git --no-pager status
+```
+
+## When in Doubt
+
+If unsure whether a command will page/prompt:
+1. Check the command's man page for non-interactive flags
+2. Limit output size (top N results)
+3. Use specialized tools instead (read_file, list_dir, grep, etc.)
+4. Test with `--help` flag first to see options
+
+## Rule Summary
+
+**ALWAYS:**
+- Add `--no-pager` to git commands with potentially long output
+- Add `--yes` / `-y` / `--non-interactive` to installation commands
+- Limit output with `-n`, `--tail`, `LIMIT` clauses
+- Use specialized tools (read_file, grep) instead of cat/less/more
+
+**NEVER:**
+- Run interactive commands without non-interactive flags
+- Assume short output won't trigger paging (branch lists can grow)
+- Use `less`, `more`, or other interactive pagers
+- Run commands that open editors (vim, nano, etc.)
