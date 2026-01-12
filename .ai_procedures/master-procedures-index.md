@@ -4,6 +4,8 @@
 
 This document provides a complete index of all AI procedures organized by lifecycle category. Use this as a reference when you need to find a specific procedure or understand what procedures are available.
 
+**Note:** Standards and guidelines have been moved to [`.ai_standards/`](../.ai_standards/). Procedures reference these standards for validation and compliance checks.
+
 ## Root Level Procedures
 
 - **[Start Any Activity](./start-any-activity-procedure.md)** - Master entry point for any work activity
@@ -11,25 +13,17 @@ This document provides a complete index of all AI procedures organized by lifecy
 - **[Session Startup](./session-startup-procedure.md)** - Session initialization procedure
 - **[Session Wrapup](./session-wrapup-procedure.md)** - Session completion procedure
 
-## 1. SDLC Operating System
+## Standards & Guidelines
 
-Core standards and practices that apply across all work.
+**Note:** Standards and guidelines have been moved to [`.ai_standards/`](../.ai_standards/). These define criteria, requirements, and reference material that procedures check against.
 
-**Location:** [`sdlc-operating-system/`](./sdlc-operating-system/)
+**Location:** [`.ai_standards/`](../.ai_standards/)
 
-**Procedures:**
-- Repository Standards Procedure
-- Branching & Naming Procedure
-- Definition of Done Procedure
-- Code Review Standards Procedure
-- Documentation Standards Procedure
-- Security Standards Procedure
-- Testing Standards Procedure
-- Observability Standards Procedure
-- Dependency Management Procedure
-- Environment & Config Procedure
-- IaC Standards Procedure
-- Data Standards Procedure
+**Standards Categories:**
+- SDLC Standards (repository, branching, code review, documentation, security, testing, observability, dependencies, environment, IaC, data)
+- Quality Standards (Definition of Done, code quality, testing gates, performance)
+- Compliance Standards (data privacy, audit requirements, access control, vendor compliance)
+- Design Standards (design system guidelines, UI/UX guidelines, accessibility standards)
 
 ## 2. Feature Lifecycle
 

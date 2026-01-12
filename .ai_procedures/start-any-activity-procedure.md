@@ -89,8 +89,9 @@ This is the master entry point procedure for initiating any work activity in the
 ### 13. Governance / Compliance
 **If you're:** Compliance reviews, audit preparation, or governance work
 
-**Go to:** [`governance-compliance/`](./governance-compliance/README.md)
+**Go to:** [`governance-compliance/`](./governance-compliance/README.md) (procedures) or [`.ai_standards/compliance/`](../.ai_standards/compliance/README.md) (standards)
 - Follow governance and compliance procedures
+- Reference compliance standards and requirements
 
 ### 14. Change Management
 **If you're:** Requiring change approval or tracking changes
@@ -101,8 +102,9 @@ This is the master entry point procedure for initiating any work activity in the
 ### 15. Standards / Configuration
 **If you're:** Updating standards, configs, or foundational practices
 
-**Go to:** [`sdlc-operating-system/`](./sdlc-operating-system/README.md)
-- Follow SDLC operating system procedures
+**Go to:** [`.ai_standards/sdlc-standards/`](../.ai_standards/sdlc-standards/README.md)
+- Reference SDLC standards and guidelines
+- Procedures reference these standards for validation
 
 ## Multi-Activity Workflows
 

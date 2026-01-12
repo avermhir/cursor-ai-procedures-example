@@ -8,7 +8,7 @@
 
 **Why this procedure exists**
 
-This procedure enables the systematic creation and maintenance of procedures within the SDLC Operating System. It ensures all procedures follow the Canonical Procedure Template format and maintain consistency, completeness, and actionability.
+This procedure enables the systematic creation and maintenance of procedures within the SDLC Operating System. It ensures all procedures follow the Canonical Procedure Template format and maintain consistency, completeness, and actionability. Procedures may reference standards from [`.ai_standards/`](../.ai_standards/) for validation and compliance.
 
 **What problem it solves**
 

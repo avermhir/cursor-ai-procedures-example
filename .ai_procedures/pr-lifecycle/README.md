@@ -36,7 +36,7 @@ Follow these procedures when:
 ## Related Lifecycles
 
 - **Feature Lifecycle** - PRs are part of feature development
-- **SDLC Operating System** - PRs must meet code review standards
+- **SDLC Standards** (`.ai_standards/sdlc-standards/`) - PRs must meet code review standards
 - **Release Lifecycle** - PRs contribute to releases
 
 ---
