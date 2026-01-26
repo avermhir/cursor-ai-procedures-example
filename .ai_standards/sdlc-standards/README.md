@@ -19,7 +19,8 @@ This folder contains core SDLC standards, guidelines, and criteria that apply ac
 9. **Dependency Management Standards** - Standards for managing and updating dependencies
 10. **Environment & Config Standards** - Environment variable and configuration standards
 11. **IaC Standards** - Infrastructure as Code standards and practices
-12. **Data Standards** - Data modeling, storage, and access standards
+12. **Data Standards** - Data modeling, storage, and access standards (including [Data Design Standards](./data-design-standards.md))
+13. **Third-Party Integration Standards** - Third-party integration specifications and documentation standards (including [Third-Party Integration Standards](./third-party-integration-standards.md))
 
 ## Usage
 

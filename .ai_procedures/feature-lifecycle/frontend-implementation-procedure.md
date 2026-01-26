@@ -63,9 +63,10 @@ A fully implemented frontend feature that:
 
 **Constraints:**
 - [ ] **Browser support** - Target browsers and versions
-- [ ] **Accessibility standards** - WCAG level required
+- [ ] **Accessibility standards** - WCAG level required (accessibility standards to be defined)
 - [ ] **Performance requirements** - Load time, bundle size limits
 - [ ] **Security requirements** - XSS prevention, CSRF protection, authentication
+- [ ] **Design System Standards** - Must comply with design system standards (design system standards to be defined)
 
 **⚠️ If an input is missing → procedure must halt or branch into a remediation path**
 
@@ -156,6 +157,7 @@ A fully implemented frontend feature that:
 - **From:** Step 1 outputs (understanding of requirements)
 - Design specifications
 - Component requirements
+- **Reference:** Design System Standards (to be defined) for component structure and organization
 
 **Actions**
 - Break down UI into component hierarchy
@@ -195,6 +197,9 @@ A fully implemented frontend feature that:
 - **From:** Step 2 outputs (component structure, interfaces)
 - Design specifications
 - Design system/component library
+- **Reference:** Design System Standards (to be defined) for component implementation patterns
+
+**Actions**
 
 **Actions**
 - Create component files following project structure conventions
@@ -449,6 +454,7 @@ A fully implemented frontend feature that:
 - **From:** Step 3 outputs (components implemented)
 - **From:** Procedure Required Inputs (browser support, accessibility standards)
 - Design specifications (responsive breakpoints)
+- **Reference:** Accessibility Standards (to be defined) for WCAG compliance requirements
 
 **Actions**
 - Test and adjust responsive design for all breakpoints
@@ -589,6 +595,7 @@ A fully implemented frontend feature that:
 - **From:** Step 10 outputs (tested feature)
 - Code quality standards
 - Documentation requirements
+- **Reference:** Code Quality Standards (to be defined) for code review preparation
 
 **Actions**
 - Run linter and fix all issues
@@ -656,6 +663,10 @@ A fully implemented frontend feature that:
 ### 7. Validation & Acceptance Criteria
 
 **How outputs are verified**
+
+**Standards compliance:**
+- [ ] Implementation complies with Accessibility Standards (to be defined)
+- [ ] Implementation complies with Design System Standards (to be defined)
 
 **Tests required:**
 - [ ] All unit tests pass
@@ -730,6 +741,8 @@ A fully implemented frontend feature that:
 - [ ] Linter passes with no errors
 - [ ] Code follows project conventions
 - [ ] Documentation updated (code comments, README)
+- [ ] Implementation complies with Accessibility Standards (to be defined)
+- [ ] Implementation complies with Design System Standards (to be defined)
 - [ ] All acceptance criteria from requirements met
 - [ ] Code committed to feature branch
 - [ ] Ready for PR creation

@@ -143,6 +143,7 @@ A fully implemented, tested, verified, and ready-to-deploy feature that:
 - Invoke [AuthN/AuthZ Procedure](./authn-authz-procedure.md) (if authentication/authorization needed)
 - Verify API contracts are stable and complete
 - Coordinate API contract freeze (if needed)
+- Invoke [Test Plan Procedure](./test-plan-procedure.md) (test planning - can start once API contracts are stable)
 
 **Decisions / Evaluations**
 - **Decision:** Are all technical design outputs complete?
@@ -159,6 +160,7 @@ A fully implemented, tested, verified, and ready-to-deploy feature that:
 - API contracts defined and stable (informed by API Discovery and backwards compatibility decision)
 - Third-party integration specs (if applicable)
 - AuthN/AuthZ requirements (if applicable)
+- Test plan created (test strategies, test cases, test data requirements)
 - Ready for implementation
 
 **Failure Handling**
@@ -185,7 +187,6 @@ A fully implemented, tested, verified, and ready-to-deploy feature that:
 
 **Actions**
 - **Start parallel procedures (can begin after API contracts stable):**
-  - Invoke [Test Plan Procedure](./test-plan-procedure.md) (test planning)
   - Invoke [Documentation & Runbook Procedure](./documentation-runbook-procedure.md) (draft documentation)
   - Invoke [IaC/Infrastructure Update Procedure](./iac-infrastructure-update-procedure.md) (if infrastructure changes needed)
 
@@ -218,7 +219,6 @@ A fully implemented, tested, verified, and ready-to-deploy feature that:
 - Frontend implementation complete
 - Middleware implementation complete (if applicable)
 - Infrastructure updates complete (if applicable)
-- Test plan created
 - Documentation draft created
 - All PRs reviewed and merged
 - Ready for quality assurance
@@ -245,7 +245,7 @@ A fully implemented, tested, verified, and ready-to-deploy feature that:
 
 **Inputs**
 - **From:** Phase 3 outputs (implementation complete)
-- Test plan (from Phase 3)
+- Test plan (from Phase 2)
 - Implementation code
 
 **Actions**
@@ -332,10 +332,12 @@ A fully implemented, tested, verified, and ready-to-deploy feature that:
 - Feature flag configuration
 
 **Actions**
-- Invoke Release Lifecycle procedures:
-  - Deployment Procedure
-  - Post-Deploy Validation Procedure
-  - Post-Release Monitoring Procedure
+- Invoke [Feature Deployment Procedure](./feature-deployment-procedure.md):
+  - Coordinates deployment execution
+  - Validates deployment success
+  - Activates feature flags according to rollout plan
+  - Establishes post-deployment monitoring
+  - References Release Lifecycle procedures (Deployment Procedure, Post-Deploy Validation Procedure, Post-Release Monitoring Procedure) as needed
 - Monitor feature in production
 - Address any deployment issues
 
@@ -530,7 +532,7 @@ A fully implemented, tested, verified, and ready-to-deploy feature that:
 
 **For maximum efficiency:**
 
-- Start test planning early (after API contracts)
+- Test planning happens in Phase 2 (after API contracts are stable) - this is a planning activity, not implementation
 - Run Backend, Frontend, and Middleware in parallel once contracts are stable
 - Create PRs incrementally, not all at once
 - Start documentation drafts during implementation

@@ -42,12 +42,14 @@ This folder contains end-to-end procedures for feature development from initial 
 - [Performance & Resilience Procedure](./performance-resilience-procedure.md)
 - [Observability Instrumentation Procedure](./observability-instrumentation-procedure.md)
 
-### 5. Deployment & Rollout
-- [Documentation & Runbook Procedure](./documentation-runbook-procedure.md)
-- [Feature Flag / Rollout Procedure](./feature-flag-rollout-procedure.md)
-- [Acceptance & Signoff Procedure](./acceptance-signoff-procedure.md)
+### 5. Pre-Deployment
+- [Documentation & Runbook Procedure](./documentation-runbook-procedure.md) ✅
+- [Feature Flag / Rollout Procedure](./feature-flag-rollout-procedure.md) ✅
+- [Acceptance & Signoff Procedure](./acceptance-signoff-procedure.md) ✅
 - [Rollback Procedure](./rollback-procedure.md) (if deployment fails)
-- Post-Deploy Validation Procedure (Release Lifecycle)
+
+### 6. Deployment
+- [Feature Deployment Procedure](./feature-deployment-procedure.md) ✅
 
 ## Related Lifecycles
 
@@ -68,4 +70,21 @@ This folder contains end-to-end procedures for feature development from initial 
 - ✅ Requirements & Scope Procedure - Defined
 - ✅ Architecture Review Procedure - Defined
 - ✅ User Journey/UX Procedure - Defined
+- ✅ Threat Model Procedure - Defined
+- ✅ Data Design Procedure - Defined
+- ✅ AuthN/AuthZ Procedure - Defined
+- ✅ Third-Party Integration Procedure - Defined
+- ✅ Test Plan Procedure - Defined
+- ✅ Implementation Verification Procedure - Defined
+- ✅ Integration Testing Procedure - Defined
+- ✅ End-to-End Testing Procedure - Defined
+- ✅ Security Review Procedure - Defined
+- ✅ Accessibility Review Procedure - Defined
+- ✅ Performance & Resilience Procedure - Defined
+- ✅ Observability Instrumentation Procedure - Defined
+- ✅ Post-Implementation Architecture Assessment Procedure - Defined
+- ✅ Documentation & Runbook Procedure - Defined
+- ✅ Feature Flag / Rollout Procedure - Defined
+- ✅ Acceptance & Signoff Procedure - Defined
+- ✅ Feature Deployment Procedure - Defined
 - 📝 All other procedures - Placeholders created, pending definition

@@ -69,6 +69,7 @@ A fully implemented middleware layer that:
 - [ ] **Scalability requirements** - Expected load, concurrency requirements
 - [ ] **Security requirements** - Request validation, authentication, authorization
 - [ ] **Availability requirements** - Uptime requirements, failover strategies
+- [ ] **API Security Standards** - Must comply with [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md)
 
 **⚠️ If an input is missing → procedure must halt or branch into a remediation path**
 
@@ -198,6 +199,8 @@ A fully implemented middleware layer that:
 - Implement authentication middleware
 - Implement authorization checks
 - Secure routes
+
+**Reference:** [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md) for authentication and authorization requirements
 
 **Inputs**
 - **From:** Procedure Required Inputs (AuthN/AuthZ requirements)
@@ -369,6 +372,8 @@ A fully implemented middleware layer that:
 - Implement request throttling
 - Protect backend services from overload
 
+**Reference:** [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md) for rate limiting requirements
+
 **Inputs**
 - **From:** Procedure Required Inputs (rate limiting requirements)
 - **From:** Step 3 outputs (authentication - for user-based rate limiting)
@@ -452,6 +457,8 @@ A fully implemented middleware layer that:
 - Implement comprehensive error handling
 - Standardize error responses
 - Handle all error scenarios
+
+**Reference:** [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md) for secure error handling requirements
 
 **Inputs**
 - **From:** All previous steps (complete implementation)
@@ -647,6 +654,7 @@ A fully implemented middleware layer that:
 - **From:** Step 12 outputs (architecture compliance validated)
 - Code quality standards
 - Documentation requirements
+- **Reference:** [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md) for security review checklist
 
 **Actions**
 - Run linter and fix all issues
@@ -710,6 +718,9 @@ A fully implemented middleware layer that:
 ### 7. Validation & Acceptance Criteria
 
 **How outputs are verified**
+
+**Standards compliance:**
+- [ ] Implementation complies with [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md)
 
 **Tests required:**
 - [ ] All unit tests pass
@@ -787,6 +798,7 @@ A fully implemented middleware layer that:
 - [ ] Linter passes with no errors
 - [ ] Code follows project conventions
 - [ ] Documentation updated (code comments, README)
+- [ ] Implementation complies with [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md)
 - [ ] All acceptance criteria from requirements met
 - [ ] Code committed to feature branch
 - [ ] Ready for PR creation

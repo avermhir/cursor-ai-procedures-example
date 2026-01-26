@@ -69,6 +69,8 @@ A fully implemented backend feature that:
 - [ ] **Performance requirements** - Response time limits, throughput requirements
 - [ ] **Scalability requirements** - Expected load, concurrency requirements
 - [ ] **Compliance requirements** - Data privacy, audit logging, etc.
+- [ ] **API Security Standards** - Must comply with [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md)
+- [ ] **Data Design Standards** - Must comply with [Data Design Standards](../../.ai_standards/sdlc-standards/data-design-standards.md) for database implementation
 
 **⚠️ If an input is missing → procedure must halt or branch into a remediation path**
 
@@ -163,6 +165,7 @@ A fully implemented backend feature that:
 - **From:** Procedure Required Inputs (data design, schema)
 - **From:** Step 1 outputs (understanding of requirements)
 - Database design from Data Design Procedure
+- **Reference:** [Data Design Standards](../../.ai_standards/sdlc-standards/data-design-standards.md) for schema design requirements
 
 **Actions**
 - Review database schema design
@@ -339,6 +342,7 @@ A fully implemented backend feature that:
 - **From:** Procedure Required Inputs (AuthN/AuthZ requirements)
 - **From:** Step 5 outputs (API controllers)
 - Authentication framework/middleware
+- **Reference:** [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md) for authentication and authorization requirements
 
 **Actions**
 - Review authentication/authorization requirements
@@ -383,6 +387,7 @@ A fully implemented backend feature that:
 - **From:** Step 5 outputs (API controllers)
 - Validation library
 - Security requirements
+- **Reference:** [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md) for input validation requirements
 
 **Actions**
 - Implement input validation for all endpoints
@@ -422,6 +427,8 @@ A fully implemented backend feature that:
 - Implement comprehensive error handling
 - Standardize error responses
 - Handle all error scenarios
+
+**Reference:** [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md) for secure error handling requirements
 
 **Inputs**
 - **From:** All previous steps (complete implementation)
@@ -648,6 +655,7 @@ A fully implemented backend feature that:
 - **From:** Step 11 outputs (tested feature)
 - Code quality standards
 - Documentation requirements
+- **Reference:** [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md) for security review checklist
 
 **Actions**
 - Run linter and fix all issues
@@ -717,6 +725,10 @@ A fully implemented backend feature that:
 ### 7. Validation & Acceptance Criteria
 
 **How outputs are verified**
+
+**Standards compliance:**
+- [ ] Implementation complies with [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md)
+- [ ] Database implementation complies with [Data Design Standards](../../.ai_standards/sdlc-standards/data-design-standards.md)
 
 **Tests required:**
 - [ ] All unit tests pass
@@ -799,6 +811,8 @@ A fully implemented backend feature that:
 - [ ] Code follows project conventions
 - [ ] API documentation updated
 - [ ] Documentation updated (code comments, README)
+- [ ] Implementation complies with [API Security Standards](../../.ai_standards/security-standards/api-security-standards.md)
+- [ ] Database implementation complies with [Data Design Standards](../../.ai_standards/sdlc-standards/data-design-standards.md)
 - [ ] All acceptance criteria from requirements met
 - [ ] Code committed to feature branch
 - [ ] Ready for PR creation

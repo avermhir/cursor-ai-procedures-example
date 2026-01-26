@@ -26,7 +26,7 @@ This folder contains standards, guidelines, criteria, and reference material tha
 - Code review standards and criteria
 - Documentation standards
 - Testing standards and requirements
-- Security standards (including [API Security Standards](./security-standards/api-security-standards.md))
+- Security standards (including [API Security Standards](./security-standards/api-security-standards.md), [Threat Modeling Standards](./security-standards/threat-modeling-standards.md), and [AuthN/AuthZ Standards](./security-standards/authn-authz-standards.md))
 - Observability standards
 - Dependency management standards
 - Environment and configuration standards
