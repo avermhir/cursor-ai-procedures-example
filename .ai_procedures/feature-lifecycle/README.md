@@ -87,4 +87,9 @@ This folder contains end-to-end procedures for feature development from initial 
 - ✅ Feature Flag / Rollout Procedure - Defined
 - ✅ Acceptance & Signoff Procedure - Defined
 - ✅ Feature Deployment Procedure - Defined
-- 📝 All other procedures - Placeholders created, pending definition
+- ✅ IaC/Infrastructure Update Procedure - Defined
+- ✅ Architecture Compliance Validation Procedure - Defined
+- ✅ Change Management Procedure - Defined
+- ✅ API Contract Procedure - Defined (alias to API Design Procedure)
+- ✅ Rollback Procedure - Defined
+- **Feature Lifecycle: 31/31 procedures (100% complete)** 🎉
