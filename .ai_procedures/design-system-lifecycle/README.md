@@ -6,10 +6,10 @@ This folder contains procedures for creating, maintaining, and ensuring complian
 
 ## Procedures
 
-- **Design System Creation/Update Procedure** - Creating and updating the design system
-- **Design System Compliance Procedure** - Ensuring features align with the design system
-- **Design System Component Procedure** - Creating and documenting design system components
-- **Design System Documentation Procedure** - Documenting the design system
+- [Design System Creation/Update Procedure](./design-system-creation-update-procedure.md) - Creating and updating the design system
+- [Design System Compliance Procedure](./design-system-compliance-procedure.md) - Ensuring features align with the design system
+- [Design System Component Procedure](./design-system-component-procedure.md) - Creating and documenting design system components
+- [Design System Documentation Procedure](./design-system-documentation-procedure.md) - Documenting the design system
 
 ## Usage
 
@@ -27,4 +27,4 @@ Follow these procedures when:
 
 ---
 
-**Status:** Procedures pending definition
+**Status:** All procedures defined (4/4).
