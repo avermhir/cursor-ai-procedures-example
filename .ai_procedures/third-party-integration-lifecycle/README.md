@@ -6,14 +6,14 @@ This folder contains procedures for evaluating, integrating, and managing third-
 
 ## Procedures
 
-- **Vendor Evaluation Procedure** - Evaluating third-party vendors
-- **Contract & SLA Procedure** - Managing contracts and SLAs
-- **Secrets & Credentials Procedure** - Managing integration credentials
-- **Rate Limit & Quota Procedure** - Handling rate limits and quotas
-- **Failure Mode Procedure** - Timeouts, retries, and circuit breakers
-- **Mocking/Stubbing Procedure** - Mocking third-party services for testing
-- **Monitoring & Alerting Procedure** - Monitoring integration health
-- **Data Mapping & Privacy Procedure** - Data mapping and privacy compliance
+- [Vendor Evaluation Procedure](./vendor-evaluation-procedure.md) - Evaluating third-party vendors
+- [Contract & SLA Procedure](./contract-sla-procedure.md) - Managing contracts and SLAs
+- [Secrets & Credentials Procedure](./secrets-credentials-procedure.md) - Managing integration credentials
+- [Rate Limit & Quota Procedure](./rate-limit-quota-procedure.md) - Handling rate limits and quotas
+- [Failure Mode Procedure](./failure-mode-procedure.md) - Timeouts, retries, and circuit breakers
+- [Mocking/Stubbing Procedure](./mocking-stubbing-procedure.md) - Mocking third-party services for testing
+- [Monitoring & Alerting Procedure](./monitoring-alerting-procedure.md) - Monitoring integration health
+- [Data Mapping & Privacy Procedure](./data-mapping-privacy-procedure.md) - Data mapping and privacy compliance
 
 ## Usage
 
@@ -31,4 +31,4 @@ Follow these procedures when:
 
 ---
 
-**Status:** Procedures pending definition
+**Status:** All procedures defined (8/8).
