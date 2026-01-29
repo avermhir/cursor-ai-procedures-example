@@ -7,22 +7,23 @@ This folder contains procedures for planning, preparing, and executing releases.
 ## Procedures
 
 ### Planning
-- Release Planning Procedure
-- Versioning Procedure
+- [Release Planning Procedure](release-planning-procedure.md)
+- [Versioning Procedure](versioning-procedure.md)
 
 ### Preparation
-- Release Candidate Procedure
-- Staging Validation Procedure
-- Production Readiness Review Procedure
+- [Release Candidate Procedure](release-candidate-procedure.md)
+- [Staging Validation Procedure](staging-validation-procedure.md)
+- [Production Readiness Review Procedure](production-readiness-review-procedure.md)
 
 ### Execution
-- Deployment Procedure
-- Rollback Procedure
+- [Deployment Procedure](deployment-procedure.md)
+- [Post-Deploy Validation Procedure](post-deploy-validation-procedure.md)
+- [Rollback Procedure](rollback-procedure.md)
 
 ### Post-Release
-- Post-Release Monitoring Procedure
-- Customer/Stakeholder Comms Procedure
-- Release Retrospective Procedure
+- [Post-Release Monitoring Procedure](post-release-monitoring-procedure.md)
+- Customer/Stakeholder Comms Procedure (pending definition)
+- Release Retrospective Procedure (pending definition)
 
 ## Usage
 
@@ -41,4 +42,4 @@ Follow these procedures when:
 
 ---
 
-**Status:** Procedures pending definition
+**Status:** 9/11 procedures defined. Planning, Preparation, Execution (Deployment, Post-Deploy Validation, Rollback), and Post-Release Monitoring are active. Customer/Stakeholder Comms and Release Retrospective pending definition.
