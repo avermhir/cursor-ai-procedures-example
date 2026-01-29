@@ -6,11 +6,11 @@ This folder contains procedures for governance, compliance, audits, and regulato
 
 ## Procedures
 
-- **Data Privacy Procedure** - Data privacy compliance
-- **Audit Evidence Procedure** - Collecting audit evidence
-- **Access Review Procedure** - Access review procedures
-- **Change Approval Procedure** - Change approval governance
-- **Vendor Compliance Procedure** - Vendor compliance management
+- [Data Privacy Procedure](./data-privacy-procedure.md) - Data privacy compliance
+- [Audit Evidence Procedure](./audit-evidence-procedure.md) - Collecting audit evidence
+- [Access Review Procedure](./access-review-procedure.md) - Access review procedures
+- [Change Approval Procedure](./change-approval-procedure.md) - Change approval governance
+- [Vendor Compliance Procedure](./vendor-compliance-procedure.md) - Vendor compliance management
 
 ## Usage
 
@@ -28,4 +28,4 @@ Follow these procedures when:
 
 ---
 
-**Status:** Procedures pending definition
+**Status:** All procedures defined (5/5).
