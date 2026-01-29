@@ -6,9 +6,9 @@ This folder contains procedures for change approval, tracking, and communication
 
 ## Procedures
 
-- **Change Approval Procedure** - Process for obtaining change approval
-- **Change Tracking Procedure** - How to track and document changes
-- **Change Communication Procedure** - Communicating changes to stakeholders
+- [Change Approval Procedure](./change-approval-procedure.md) - Process for obtaining change approval
+- [Change Tracking Procedure](./change-tracking-procedure.md) - How to track and document changes
+- [Change Communication Procedure](./change-communication-procedure.md) - Communicating changes to stakeholders
 
 ## Usage
 
@@ -25,4 +25,4 @@ Follow these procedures when:
 
 ---
 
-**Status:** Procedures pending definition
+**Status:** All procedures defined (3/3).
