@@ -22,16 +22,16 @@ This folder contains standards, guidelines, criteria, and reference material tha
 ## Standards Categories
 
 ### SDLC Standards
-- Repository structure and organization standards
-- Code review standards and criteria
-- Documentation standards
-- Testing standards and requirements
+- Repository structure and organization standards (pending definition)
+- [Code Review Standards](./sdlc-standards/code-review-standards.md)
+- Documentation standards (pending definition)
+- [Testing Standards](./sdlc-standards/testing-standards.md)
 - Security standards (including [API Security Standards](./security-standards/api-security-standards.md), [Threat Modeling Standards](./security-standards/threat-modeling-standards.md), and [AuthN/AuthZ Standards](./security-standards/authn-authz-standards.md))
-- Observability standards
-- Dependency management standards
-- Environment and configuration standards
-- IaC standards
-- Data standards
+- Observability standards (pending definition)
+- Dependency management standards (pending definition)
+- Environment and configuration standards (pending definition)
+- [IaC Standards](./sdlc-standards/iac-standards.md)
+- Data standards (including [Data Design Standards](./sdlc-standards/data-design-standards.md), [Third-Party Integration Standards](./sdlc-standards/third-party-integration-standards.md))
 
 ### Quality Standards
 - Definition of Done criteria

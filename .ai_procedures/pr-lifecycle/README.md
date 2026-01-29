@@ -18,12 +18,12 @@ This folder contains procedures for preparing, reviewing, and merging pull reque
 - [API/Contract Compatibility Procedure](./api-contract-compatibility-procedure.md)
 - [Frontend Review Procedure](./frontend-review-procedure.md)
 - [Infra/IaC Review Procedure](./infra-iac-review-procedure.md)
-- Observability Review Procedure
-- Performance Review Procedure
+- [Observability Review Procedure](./observability-review-procedure.md)
+- [Performance Review Procedure](./performance-review-procedure.md)
 - [Backwards Compatibility Procedure](./backwards-compatibility-procedure.md)
 
 ### Finalization
-- Release Notes Procedure
+- [Release Notes Procedure](./release-notes-procedure.md)
 - [Merge / Squash / Rebase Procedure](./merge-squash-rebase-procedure.md)
 
 ## Usage
@@ -53,6 +53,6 @@ Follow these procedures when:
 - ✅ Infra/IaC Review Procedure - Defined
 - ✅ Backwards Compatibility Procedure - Defined
 - ✅ Merge / Squash / Rebase Procedure - Defined
-- 📝 Observability Review Procedure - Pending definition
-- 📝 Performance Review Procedure - Pending definition
-- 📝 Release Notes Procedure - Pending definition
+- ✅ Observability Review Procedure - Defined
+- ✅ Performance Review Procedure - Defined
+- ✅ Release Notes Procedure - Defined

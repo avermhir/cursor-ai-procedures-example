@@ -22,8 +22,8 @@ This folder contains procedures for planning, preparing, and executing releases.
 
 ### Post-Release
 - [Post-Release Monitoring Procedure](post-release-monitoring-procedure.md)
-- Customer/Stakeholder Comms Procedure (pending definition)
-- Release Retrospective Procedure (pending definition)
+- [Customer/Stakeholder Comms Procedure](customer-stakeholder-comms-procedure.md)
+- [Release Retrospective Procedure](release-retrospective-procedure.md)
 
 ## Usage
 
@@ -42,4 +42,4 @@ Follow these procedures when:
 
 ---
 
-**Status:** 9/11 procedures defined. Planning, Preparation, Execution (Deployment, Post-Deploy Validation, Rollback), and Post-Release Monitoring are active. Customer/Stakeholder Comms and Release Retrospective pending definition.
+**Status:** 11/11 procedures defined. Planning, Preparation, Execution (Deployment, Post-Deploy Validation, Rollback), Post-Release (Monitoring, Customer/Stakeholder Comms, Release Retrospective) are active.

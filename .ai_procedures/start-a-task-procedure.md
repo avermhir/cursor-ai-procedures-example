@@ -478,7 +478,7 @@ A fully defined task with:
 - **"Start Any Activity" procedure** - Used in Step 3 for lifecycle routing
 - **Master Procedures Index** - Used in Step 4 for procedure discovery
 - **Individual procedure documents** - Used in Steps 4-6 to extract inputs/outputs/DoD
-- **Task tracking systems** - Task definition can be logged to Jira or other systems
+- **Task tracking (bd)** - Task definition can be logged to bd (beads) or other systems
 
 ---
 
@@ -513,7 +513,7 @@ A fully defined task with:
 - [ ] Commits (if task definition is committed to git)
 - [ ] PRs (if task involves PR creation)
 - [ ] ADRs (if task involves architectural decisions)
-- [ ] Tickets (Jira/GitHub issue references - should be included in task definition)
+- [ ] Tickets (bd issue or other issue references - should be included in task definition)
 - [ ] Runbooks (if task involves operational procedures)
 - [ ] Decision logs (task type, lifecycle, procedure selections)
 - [ ] Change records (if task definition changes)

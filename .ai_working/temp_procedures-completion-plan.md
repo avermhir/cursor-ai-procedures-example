@@ -4,6 +4,8 @@
 **Status:** Active Planning Document  
 **Last Commit:** `2da39be` - Release Lifecycle foundation and Feature Lifecycle expansions
 
+**Task tracking:** Tasks from this plan have been migrated to **bd (beads)**. Use `bd ready` to see work with no blockers, `bd list` to see all issues, and `bd show <id>` for details. Epic: `cursor-ai-procedures-example-wos`. Phases 1–3 and their procedure tasks are closed (already completed); Phases 4–6 and remaining procedure/standard tasks are open.
+
 ---
 
 ## Executive Summary

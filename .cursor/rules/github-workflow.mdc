@@ -1,5 +1,5 @@
 ---
-description: GitHub CLI and git workflow guidance. Use GH CLI for PRs/branches/commits, Jira for issue tracking.
+description: GitHub CLI and git workflow guidance. Use GH CLI for PRs/branches/commits, bd (beads) for task tracking.
 alwaysApply: true
 ---
 
@@ -7,7 +7,7 @@ alwaysApply: true
 
 ## Purpose
 
-This rule defines how to use GitHub CLI and git for repository operations, while using Jira for issue tracking.
+This rule defines how to use GitHub CLI and git for repository operations, while using **bd** (beads) for task/issue tracking.
 
 ## GitHub CLI Usage
 
@@ -20,12 +20,22 @@ When asked about a GitHub task, use the GH CLI to execute commands.
 - **Repository operations:** clone, fork, status
 - **GitHub Actions:** view runs, trigger workflows
 
-### NOT for Issue Tracking
+### Task Tracking: Use bd (beads)
 
-**Do NOT use GitHub Issues for tracking work.** Use Jira instead:
-- **Project:** DT (Development Team)
-- **URL:** https://conversationdynamics.atlassian.net/browse/DT
-- **Use:** Jira MCP tools for all issue operations
+**Do NOT use GitHub Issues for tracking work.** Use **bd** (beads) instead:
+- **Tool:** bd (beads) – distributed, git-backed issue tracker for AI agents. Issues live in `.beads/` (JSONL), versioned and merged like code. Hash-based IDs (e.g. `bd-a1b2`) avoid merge collisions.
+- **Docs:** [github.com/steveyegge/beads](https://github.com/steveyegge/beads) – installation, agent workflow, essential commands.
+- **Run** `bd onboard` to get started (see AGENTS.md).
+
+```bash
+bd ready                    # List tasks with no open blockers
+bd create "Title" -p 0      # Create a task (e.g. P0)
+bd dep add <child> <parent> # Link tasks (blocks, parent-child)
+bd show <id>                 # View task details and audit trail
+bd update <id> --status in_progress  # Claim work
+bd close <id>                # Complete work
+bd sync                      # Sync with git (run after commits, before push)
+```
 
 ## Workflow Process
 
@@ -34,17 +44,17 @@ When executing git/GitHub tasks:
 1. **Create a plan** - Break down the task into steps
 2. **Create content** - Draft any necessary content in `.ai_working/` folder
 3. **Execute the plan** - Run commands and make changes
-4. **Reference Jira tickets** - Always include DT-XXX in commits and PRs
+4. **Reference bd issues** - When work is tied to a bd issue, include the issue id in commits and PRs
 
-## PR Workflow with Jira
+## PR Workflow with bd
 
 ### Creating PRs
 
-Always reference Jira tickets when creating PRs:
+When work is tied to a bd issue, reference it in the PR:
 
 ```bash
-gh pr create --title "DT-123: Fix login bug" --body "## Summary
-Fixes DT-123
+gh pr create --title "<issue-id>: Fix login bug" --body "## Summary
+Fixes <issue-id>
 
 ## Changes
 - Fixed authentication flow
@@ -56,46 +66,53 @@ Fixes DT-123
 "
 ```
 
-### PR Title Format
+### PR Title Format (when linked to bd issue)
 ```
-DT-XXX: Brief description of changes
+<issue-id>: Brief description of changes
 ```
 
 ### PR Body Requirements
 - **Summary:** Brief overview
-- **Jira Reference:** "Fixes DT-XXX" or "Related to DT-XXX"
+- **bd Reference:** "Fixes \<issue-id\>" or "Related to \<issue-id\>" when applicable
 - **Changes:** Bullet list of changes
 - **Test Plan:** How to verify the changes
 
 ## Commit Message Format
 
-### Required Format
-All commits **must** reference a Jira ticket:
+### When work is tied to a bd issue
+Prefix with the bd issue id:
 
 ```bash
-git commit -m "DT-123: Fix password validation bug"
+git commit -m "<issue-id>: Fix password validation bug"
 ```
 
 ### Format Rules
-- Prefix with Jira ticket: `DT-XXX: `
+- When referencing a bd issue: prefix with `<issue-id>: `
 - Use present tense: "Fix bug" not "Fixed bug"
 - Keep under 72 characters for first line
 - Add details in commit body if needed
+- After committing: run `bd sync` before `git push` to keep bd in sync with git
 
 ### Examples
 
-✅ **Good:**
+✅ **Good (with bd issue):**
 ```
-DT-42: Fix password validation for special characters
-DT-89: Add user profile image upload endpoint
-DT-156: Refactor Auth0 user sync logic
+<issue-id>: Fix password validation for special characters
+<issue-id>: Add user profile image upload endpoint
+```
+
+✅ **Good (no bd issue – use conventional commit):**
+```
+docs: Update API documentation for user endpoints
+chore: Update npm dependencies
+ci: Fix GitHub Actions workflow
 ```
 
 ❌ **Bad:**
 ```
-fix bug              (no Jira ticket)
-Fixed the login      (past tense, no ticket)
-updates              (vague, no ticket)
+fix bug              (no issue or conventional prefix)
+Fixed the login      (past tense)
+updates              (vague)
 ```
 
 ## Communication Style
@@ -104,32 +121,28 @@ When executing a git-related task, prepend messages with 📋 emoji.
 
 **Example:**
 ```
-📋 Creating PR for DT-123...
+📋 Creating PR for <issue-id>...
 ```
 
-## Jira Integration
+## bd Integration
 
-### Project Information
-- **Project Key:** DT
-- **Commit format:** `DT-XXX: description`
-- **PR title format:** `DT-XXX: PR title`
-- **PR body:** Must include `Fixes DT-XXX` or `Related to DT-XXX`
+### Workflow
+- **Create/claim work:** `bd create "Title"`, `bd ready`, `bd update <id> --status in_progress`
+- **Commit format (with issue):** `<issue-id>: description`
+- **PR title/body:** Include "Fixes \<issue-id\>" or "Related to \<issue-id\>" when applicable
+- **Before push:** Run `bd sync` then `git push` (see AGENTS.md "Landing the Plane")
 
-### Linking Commits to Jira
-Jira automatically links commits that include ticket numbers in the format `DT-XXX`.
-
-### Updating Jira from PR
-When PR is merged:
-- Jira ticket can transition automatically (if configured)
-- Add comment to Jira with PR link
-- Update ticket status to reflect merge
+### Linking commits to bd
+- bd syncs with git; run `bd sync` after commits to keep issues and git in sync
+- Reference the bd issue id (hash-based, e.g. `bd-a1b2` or hierarchical `bd-a3f8.1`) in commit messages and PRs when work is tied to an issue
+- Full usage and agent workflow: [github.com/steveyegge/beads](https://github.com/steveyegge/beads)
 
 ## Common Commands
 
 ### Pull Requests
 ```bash
 # Create PR
-gh pr create --title "DT-123: Title" --body "Fixes DT-123"
+gh pr create --title "<issue-id>: Title" --body "Fixes <issue-id>"
 
 # List PRs
 gh pr list
@@ -147,7 +160,7 @@ gh pr comment 123 --body "Updated per review feedback"
 ### Branches
 ```bash
 # Create branch
-git checkout -b feature/DT-123-add-feature
+git checkout -b feature/<issue-id>-add-feature
 
 # List branches  
 git branch -a
@@ -165,18 +178,12 @@ git log --oneline -n 20
 git show <commit-hash>
 
 # Amend last commit
-git commit --amend -m "DT-123: Updated commit message"
+git commit --amend -m "<issue-id>: Updated commit message"
 ```
 
-## Exception: No Jira Ticket Required
+## Exception: No bd issue (use conventional commit)
 
-Only for:
-- Documentation fixes
-- README updates  
-- Configuration changes
-- Build/CI updates
-
-Use conventional commit prefix instead:
+When there is no bd issue for the work (e.g. docs-only, chore, ci):
 ```
 docs: Update API documentation for user endpoints
 chore: Update npm dependencies
@@ -187,6 +194,5 @@ ci: Fix GitHub Actions workflow
 
 This rule works with:
 - **commit-to-github.mdc** - Commit message format and push requirements
-- **pr-merge-workflow.mdc** - PR merge safety checks
-- **jira-integration.mdc** - Full Jira workflow details
+- **AGENTS.md** - bd (beads) workflow and "Landing the Plane" (bd sync, git push)
 - **pre-commit-checklist.mdc** - Pre-commit validation steps
