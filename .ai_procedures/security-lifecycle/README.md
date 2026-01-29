@@ -6,13 +6,13 @@ This folder contains procedures for security reviews, vulnerability management, 
 
 ## Procedures
 
-- **Secure Design Review Procedure** - Security design reviews
-- **Secrets Management Procedure** - Managing secrets securely
-- **IAM Least Privilege Procedure** - Implementing least privilege
-- **Dependency & Vulnerability Procedure** - Managing dependencies and vulnerabilities
-- **Security Logging Procedure** - Security event logging
-- **Pen Test / Hardening Procedure** - Penetration testing and hardening
-- **Incident Response Procedure** - Security incident response (ties to Incident Lifecycle)
+- [Secure Design Review Procedure](./secure-design-review-procedure.md) - Security design reviews
+- [Secrets Management Procedure](./secrets-management-procedure.md) - Managing secrets securely
+- [IAM Least Privilege Procedure](./iam-least-privilege-procedure.md) - Implementing least privilege
+- [Dependency & Vulnerability Procedure](./dependency-vulnerability-procedure.md) - Managing dependencies and vulnerabilities
+- [Security Logging Procedure](./security-logging-procedure.md) - Security event logging
+- [Pen Test / Hardening Procedure](./pen-test-hardening-procedure.md) - Penetration testing and hardening
+- [Incident Response Procedure](./incident-response-procedure.md) - Security incident response (ties to Incident Lifecycle)
 
 ## Usage
 
@@ -30,4 +30,4 @@ Follow these procedures when:
 
 ---
 
-**Status:** Procedures pending definition
+**Status:** All procedures defined (7/7).
