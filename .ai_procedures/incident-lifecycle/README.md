@@ -6,12 +6,12 @@ This folder contains procedures for responding to and resolving incidents. These
 
 ## Procedures
 
-- **Triage Procedure** - Initial incident assessment and prioritization
-- **Mitigation Procedure** - Steps to resolve or contain the incident
-- **Communications Procedure** - How to communicate incident status
-- **Root Cause Analysis Procedure** - Analyzing the underlying cause
-- **Corrective Actions Procedure** - Actions to prevent recurrence
-- **Postmortem Procedure** - Documenting and learning from incidents
+- [Triage Procedure](./triage-procedure.md) - Initial incident assessment and prioritization
+- [Mitigation Procedure](./mitigation-procedure.md) - Steps to resolve or contain the incident
+- [Communications Procedure](./communications-procedure.md) - How to communicate incident status
+- [Root Cause Analysis Procedure](./root-cause-analysis-procedure.md) - Analyzing the underlying cause
+- [Corrective Actions Procedure](./corrective-actions-procedure.md) - Actions to prevent recurrence
+- [Postmortem Procedure](./postmortem-procedure.md) - Documenting and learning from incidents
 
 ## Usage
 
@@ -30,4 +30,4 @@ Follow these procedures when:
 
 ---
 
-**Status:** Procedures pending definition
+**Status:** All procedures defined (6/6).
