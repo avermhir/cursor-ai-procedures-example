@@ -1,0 +1,37 @@
+---
+description: When working on the procedures library, continue creating procedures until all beads plan procedure tasks are complete.
+alwaysApply: false
+---
+
+# Procedures library completion drive
+
+## Purpose
+
+When working on the AI procedures library in this repo, **continue creating procedures until all procedure tasks in the beads plan are complete**.
+
+## How to work
+
+1. **Check ready work:** Run `bd ready` to list procedure-level tasks with no blockers.
+2. **Claim work:** `bd update <id> --status in_progress` for the next procedure.
+3. **Create procedure:** Add the procedure under the correct lifecycle folder using the [procedure template](../.ai_procedures/procedure-template.md) and existing procedures as reference. Follow the canonical structure (Purpose, Trigger, Required Inputs, Plan, Workflow, Output Contract, Validation, Downstream, Definition of Done, Audit, Exit States).
+4. **Update README:** Add links and status (e.g. "All procedures defined") in the lifecycle folder's README.
+5. **Close beads:** `bd close <id>` for each completed procedure; close the lifecycle phase task when all its procedures are done.
+6. **Sync and ship:** `bd sync --no-daemon`, then commit and push. Reference beads IDs in commit messages when applicable.
+7. **Loop:** Repeat until `bd ready` shows no procedure tasks, or the epic "Procedures library – complete all remaining lifecycles" and all its phase tasks are closed.
+
+## When to stop
+
+- All lifecycles in the beads plan have all procedures defined (Design System, Incident, Change Management, Data, AuthN/AuthZ, Third-Party, Testing & Quality, Security, Observability & Operations, Governance & Compliance).
+- The epic and all phase tasks are closed.
+- `bd ready` no longer lists procedure-creation work.
+
+## Exceptions
+
+- **User says stop:** If the user explicitly asks to pause or switch focus, obey that first.
+- **Beads sync issues:** If `bd sync` consistently fails, commit procedure files and README updates anyway; note beads sync failure for manual fix later.
+
+## Reference
+
+- Beads plan epic: "Procedures library – complete all remaining lifecycles"
+- Master index: [.ai_procedures/master-procedures-index.md](../.ai_procedures/master-procedures-index.md)
+- Procedure template: [.ai_procedures/procedure-template.md](../.ai_procedures/procedure-template.md)
